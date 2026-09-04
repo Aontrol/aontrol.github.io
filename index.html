@@ -1,107 +1,113 @@
-<!-- SEO and Production Meta Tags -->
-<title>Abhirama M | Hardware & Embedded Systems Engineer</title>
-<meta name="description" content="Portfolio of Abhirama M, Hardware Developer and Embedded Systems Engineer specializing in bare-metal firmware, ARM Cortex-M, ESP32, RP2040, and Linux system programming.">
-<meta name="keywords" content="Abhirama M, Embedded Systems Engineer, Hardware Developer, KiCad, ARM Cortex-M, ESP32, FreeRTOS, Linux, PCB Design, Bengaluru">
-<meta name="author" content="Abhirama M">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO and Production Meta Tags -->
+    <title>Abhirama M | Hardware & Embedded Systems Engineer</title>
+    <meta name="description" content="Portfolio of Abhirama M, Electronics and Communication Engineering graduate specializing in bare-metal firmware, ARM Cortex-M, ESP32, RP2040, and KiCad PCB design.">
+    <meta name="keywords" content="Abhirama M, Embedded Systems Engineer, Hardware Developer, Fresher, KiCad, ARM Cortex-M, ESP32, FreeRTOS, Linux, PCB Design, Bengaluru">
+    <meta name="author" content="Abhirama M">
 
-<!-- Open Graph / Social Sharing -->
-<meta property="og:title" content="Abhirama M | Hardware & Embedded Systems Engineer">
-<meta property="og:description" content="6+ years of experience in digital electronics, KiCad PCB design, and end-to-end embedded systems development.">
-<meta property="og:type" content="website">
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Abhirama M | Hardware & Embedded Systems Engineer">
+    <meta property="og:description" content="Dedicated ECE graduate with a strong foundation in digital electronics, KiCad PCB design, and end-to-end embedded systems development.">
+    <meta property="og:type" content="website">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Phosphor Icons -->
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-<!-- Google Fonts: Playfair Display & Space Grotesk & Fira Code -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Playfair Display & Space Grotesk & Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
-<!-- Tailwind Configuration -->
-<script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                fontFamily: {
-                    sans: ['Space Grotesk', 'sans-serif'],
-                    serif: ['Playfair Display', 'serif'],
-                    mono: ['Fira Code', 'monospace'],
-                },
-                colors: {
-                    brand: {
-                        400: '#fdba74', 
-                        500: '#ea580c', 
-                        600: '#c2410c',
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['Fira Code', 'monospace'],
                     },
-                    base: {
-                        900: '#0a0f18', 
-                        800: '#141c2b', 
-                        700: '#1f2a3f', 
-                        600: '#334155',
-                    },
-                    accent: {
-                        green: '#4ade80',
-                        teal: '#2dd4bf',
+                    colors: {
+                        brand: {
+                            400: '#fdba74', 
+                            500: '#ea580c', 
+                            600: '#c2410c',
+                        },
+                        base: {
+                            900: '#0a0f18', 
+                            800: '#141c2b', 
+                            700: '#1f2a3f', 
+                            600: '#334155',
+                        },
+                        accent: {
+                            green: '#4ade80',
+                            teal: '#2dd4bf',
+                        }
                     }
                 }
             }
         }
-    }
-</script>
-<style>
-    body {
-        background-color: #0a0f18;
-        color: #e2e8f0;
-        background-image: radial-gradient(circle at 15% 50%, rgba(20, 28, 43, 0.4), transparent 50%),
-                          radial-gradient(circle at 85% 30%, rgba(31, 42, 63, 0.4), transparent 50%);
-    }
-    
-    .noise-bg {
-        position: fixed;
-        top: 0; left: 0; width: 100vw; height: 100vh;
-        pointer-events: none;
-        z-index: 50;
-        opacity: 0.03;
-        background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-    }
+    </script>
+    <style>
+        body {
+            background-color: #0a0f18;
+            color: #e2e8f0;
+            background-image: radial-gradient(circle at 15% 50%, rgba(20, 28, 43, 0.4), transparent 50%),
+                              radial-gradient(circle at 85% 30%, rgba(31, 42, 63, 0.4), transparent 50%);
+        }
+        
+        .noise-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
 
-    .gradient-text {
-        background: linear-gradient(135deg, #f8fafc, #fdba74);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    
-    .card-organic {
-        border: 1px solid rgba(255,255,255,0.05);
-        background: rgba(20, 28, 43, 0.6);
-        backdrop-filter: blur(10px);
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                    border-color 0.4s ease;
-    }
-    .card-organic:hover {
-        transform: translateY(-8px) rotate(-0.5deg);
-        border-color: rgba(253, 186, 116, 0.3);
-        box-shadow: 20px 20px 60px rgba(0,0,0,0.4);
-    }
+        .gradient-text {
+            background: linear-gradient(135deg, #f8fafc, #fdba74);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card-organic {
+            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(20, 28, 43, 0.6);
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        border-color 0.4s ease;
+        }
+        .card-organic:hover {
+            transform: translateY(-8px) rotate(-0.5deg);
+            border-color: rgba(253, 186, 116, 0.3);
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.4);
+        }
 
-    .code-window {
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .cursor-blink {
-        animation: blink 1s step-end infinite;
-    }
-    @keyframes blink { 50% { opacity: 0; } }
-    
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0a0f18; }
-    ::-webkit-scrollbar-thumb { background: #1f2a3f; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #ea580c; }
-</style>
-
+        .code-window {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f18; }
+        ::-webkit-scrollbar-thumb { background: #1f2a3f; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ea580c; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500/30 selection:text-brand-400">
 
 <div class="noise-bg"></div>
 
@@ -114,10 +120,9 @@
                     Abhirama M<span class="text-brand-500">.</span>
                 </a>
             </div>
-            <!-- Desktop Menu -->
+            <!-- Desktop Menu (Removed Experience) -->
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">About</a>
-                <a href="#experience" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Experience</a>
                 <a href="#skills" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Expertise</a>
                 <a href="#projects" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Projects</a>
                 <a href="#education" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Education</a>
@@ -139,7 +144,6 @@
     <div id="mobile-menu" class="hidden md:hidden bg-base-800 border-b border-white/5">
         <div class="px-4 pt-2 pb-6 space-y-2">
             <a href="#about" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">About</a>
-            <a href="#experience" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Experience</a>
             <a href="#skills" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Expertise</a>
             <a href="#projects" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Projects</a>
             <a href="#education" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Education</a>
@@ -156,7 +160,7 @@
     
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
-        <p class="font-mono text-brand-400 mb-4 tracking-widest uppercase text-sm">Hardware & Embedded Systems Engineer</p>
+        <p class="font-mono text-brand-400 mb-4 tracking-widest uppercase text-sm">Electronics & Communication Engineering Graduate</p>
         
         <h1 class="text-5xl md:text-7xl font-serif font-bold tracking-tight mb-6 leading-tight">
             Abhirama M <br/> 
@@ -164,7 +168,7 @@
         </h1>
         
         <p class="mt-8 max-w-2xl text-lg md:text-xl text-gray-400 mx-auto font-light leading-relaxed">
-            6+ years of hands-on experience in digital electronics, KiCad PCB design, bare-metal firmware (ARM Cortex-M, ESP32, RP2040), and rigorous component-level debugging.
+            Dedicated engineering graduate with hands-on expertise in digital electronics, KiCad PCB design, bare-metal firmware (ARM Cortex-M, ESP32, RP2040), and rigorous component-level diagnostics.
         </p>
         
         <div class="mt-12 flex justify-center gap-6 items-center flex-wrap">
@@ -192,13 +196,13 @@
                 </h2>
                 <div class="space-y-6 text-gray-400 leading-relaxed text-lg font-light">
                     <p>
-                        I am a Hardware Developer and Electronics Engineer with over 6 years of continuous, hands-on experience in digital electronics, KiCad PCB design, and end-to-end embedded systems development. I have a proven track record of designing, assembling, and delivering commercial-grade custom electronic products independently.
+                        I am a dedicated Electronics and Communication Engineering graduate with a strong foundation in digital electronics, KiCad PCB design, and end-to-end embedded systems development. 
                     </p>
                     <p>
-                        Highly proficient in bare-metal firmware development (ARM Cortex-M, ESP32, RP2040), direct register-level programming, Linux system administration, and component-level debugging. I also possess working knowledge of industrial automation (PLC/HMI/SCADA) and FPGA digital design (System Verilog).
+                        Highly proficient in bare-metal firmware development (ARM Cortex-M, ESP32, RP2040), direct register-level programming, and Linux system administration. I leverage practical experience from independent hardware consulting to design, assemble, and troubleshoot custom electronic solutions.
                     </p>
                     <p class="italic border-l-2 border-brand-500/50 pl-4 py-2 mt-4 text-gray-300">
-                        "Comprehensive support across the entire hardware engineering and manufacturing lifecycle."
+                        "Eager to apply robust component-level diagnostics and microcontroller integration skills in a professional entry-level engineering role."
                     </p>
                 </div>
             </div>
@@ -217,7 +221,7 @@
                         
                         <div class="flex"><span class="text-accent-green mr-2">➜</span><span class="text-brand-400">~</span> <span class="text-white ml-2">cat profile.json</span></div>
                         <p class="text-gray-400 ml-4">{"location": "Bengaluru, IN",</p>
-                        <p class="text-gray-400 ml-4"> "experience": "6+ Years",</p>
+                        <p class="text-gray-400 ml-4"> "status": "Recent ECE Graduate",</p>
                         <p class="text-gray-400 ml-4 mb-4"> "core": ["KiCad", "ARM Cortex", "Linux"]}</p>
                         
                         <div class="flex"><span class="text-accent-green mr-2">➜</span><span class="text-brand-400">~</span> <span class="text-white ml-2 cursor-blink block w-2 h-4 bg-white translate-y-1"></span></div>
@@ -228,92 +232,51 @@
     </div>
 </section>
 
-<!-- Professional Experience Section -->
-<section id="experience" class="py-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-serif font-bold mb-16 text-center">Professional Experience</h2>
-
-        <div class="space-y-12 max-w-4xl mx-auto">
-            
-            <!-- Experience 1 -->
-            <div class="card-organic p-8">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Hardware Developer</h3>
-                        <p class="font-mono text-brand-400 text-sm mt-1">Independent Consultant</p>
-                    </div>
-                    <span class="font-mono text-xs px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/20 mt-2 md:mt-0">2020 – 2025</span>
-                </div>
-                <ul class="space-y-3 text-gray-300 font-light list-disc list-inside">
-                    <li>Engineered and manufactured custom embedded solutions and consumer-ready electronic devices based on highly specific client requirements.</li>
-                    <li>Managed complete end-to-end product lifecycle: requirement gathering, KiCad PCB layout, component sourcing, manual soldering assembly, and final firmware deployment.</li>
-                    <li>Developed highly optimized bare-metal firmware utilizing direct register-level programming to bypass standard abstraction layers, ensuring strict timing requirements and custom peripheral control.</li>
-                    <li>Performed rigorous component-level debugging using oscilloscopes, signal generators, and DMMs to diagnose communication faults and validate circuit integrity.</li>
-                </ul>
-            </div>
-
-            <!-- Experience 2 -->
-            <div class="card-organic p-8">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Embedded Systems Intern</h3>
-                        <p class="font-mono text-accent-teal text-sm mt-1">Cranes Varsity Pvt Ltd</p>
-                    </div>
-                    <span class="font-mono text-xs px-3 py-1 bg-accent-teal/10 text-accent-teal border border-accent-teal/20 mt-2 md:mt-0">Oct 2025 – Aug 2026</span>
-                </div>
-                <ul class="space-y-3 text-gray-300 font-light list-disc list-inside">
-                    <li>Developed embedded applications using Embedded C on the LPC1768 (ARM Cortex-M) architecture using the Keil IDE.</li>
-                    <li>Programmed microcontrollers for complex peripheral interfacing, effectively managing UART communication, ADC conversions, and GPIO controls for hardware debugging.</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
 <!-- Technical Skills Section -->
-<section id="skills" class="py-24 bg-base-800/30 border-y border-white/5">
+<section id="skills" class="py-24 border-y border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-16 text-center">
-            <h2 class="text-4xl font-serif font-bold mb-4">Technical Stack</h2>
-            <p class="text-gray-400 max-w-xl mx-auto font-light">Comprehensive expertise spanning hardware design, firmware, and systems administration.</p>
+            <h2 class="text-4xl font-serif font-bold mb-4">Technical Skills</h2>
+            <p class="text-gray-400 max-w-xl mx-auto font-light">Comprehensive expertise spanning hardware design, firmware development, and systems administration.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">01. Hardware & PCB</h3>
+                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">01. Hardware</h3>
                 <ul class="space-y-3 text-gray-300 font-light text-sm">
                     <li>KiCad & Schematic Capture</li>
                     <li>PCB Layout & Routing</li>
                     <li>SMD / Through-Hole Soldering</li>
-                    <li>Multisim & Signal Integrity</li>
-                    <li>Oscilloscopes, Logic Analyzers, DMM</li>
-                    <li>MOSFET Switching Analysis</li>
+                    <li>Multisim & Oscilloscope</li>
+                    <li>Logic Analyzer & Signal Gen.</li>
+                    <li>DMM Diagnostics</li>
+                    <li>Component-Level Debugging</li>
                 </ul>
             </div>
 
             <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">02. Embedded & MCU</h3>
+                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">02. Embedded</h3>
                 <ul class="space-y-3 text-gray-300 font-light text-sm">
                     <li>ARM Cortex-M (M0+/M3)</li>
                     <li>RP2040, ESP32, LPC1768</li>
+                    <li>FreeRTOS</li>
                     <li>I2C, SPI, UART, EEPROM</li>
                     <li>LoRa, RF, Wi-Fi, Bluetooth</li>
                     <li>ADC/DAC Interfacing</li>
-                    <li>Bare-Metal & Register-Level</li>
                 </ul>
             </div>
 
             <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">03. Systems & Software</h3>
+                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">03. SysAdmin</h3>
                 <ul class="space-y-3 text-gray-300 font-light text-sm">
                     <li>Embedded C & Assembly</li>
                     <li>C++, Python, MicroPython</li>
-                    <li>RTOS & FreeRTOS Concepts</li>
-                    <li>Advanced Linux Admin (Ubuntu/Mint)</li>
-                    <li>Custom Makefile Build Systems</li>
+                    <li>RTOS Concepts</li>
+                    <li>Linux Admin (Ubuntu/Mint)</li>
+                    <li>Custom Makefiles</li>
                     <li>Docker Containerization</li>
+                    <li>Bash Scripting & VirtualBox</li>
                 </ul>
             </div>
 
@@ -321,11 +284,11 @@
                 <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">04. Working Knowledge</h3>
                 <ul class="space-y-3 text-gray-300 font-light text-sm">
                     <li>System Verilog & Verilog</li>
-                    <li>FPGA Development (ModelSim)</li>
+                    <li>FPGA Development</li>
+                    <li>Intel FPGA Starter (ModelSim)</li>
                     <li>PLC Programming</li>
                     <li>Human-Machine Interface (HMI)</li>
                     <li>SCADA Systems</li>
-                    <li>Local LLM Tooling Integration</li>
                 </ul>
             </div>
 
@@ -333,10 +296,10 @@
     </div>
 </section>
 
-<!-- Projects Section (Updated to match latest resume) -->
-<section id="projects" class="py-24">
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-base-800/30">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-serif font-bold mb-16 text-center">Featured Projects</h2>
+        <h2 class="text-4xl font-serif font-bold mb-16 text-center">Academic & Technical Projects</h2>
 
         <div class="space-y-20">
             
@@ -358,7 +321,7 @@
                             <span class="text-xs font-mono text-brand-400">LPC1768</span>
                         </div>
                         <p class="text-gray-400 font-light leading-relaxed relative z-10">
-                            Engineered a bare-metal Point of Sale (POS) system on the ARM Cortex-M based LPC1768 architecture using Embedded C and the Keil IDE. Implemented FreeRTOS for efficient task scheduling, managing concurrent processes including GPIO polling, LCD interfacing, and switch debouncing.
+                            Engineered a bare-metal Point of Sale (POS) system on the ARM Cortex-M based LPC1768 architecture using the Keil IDE. Implemented FreeRTOS for efficient task scheduling, managing concurrent processes including GPIO polling, LCD interfacing, and switch debouncing.
                         </p>
                     </div>
                 </div>
@@ -366,7 +329,7 @@
                     <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
                     <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-brand-500">
                         <li>Implemented FreeRTOS task scheduling for reliable concurrent peripheral management.</li>
-                        <li>Ensured strict real-time constraints and optimized dynamic memory allocation for continuous uptime.</li>
+                        <li>Ensured strict real-time constraints and optimized dynamic memory allocation for continuous, reliable system uptime.</li>
                     </ul>
                 </div>
             </div>
@@ -396,8 +359,7 @@
                 <div class="w-full lg:w-1/2 lg:pr-12">
                     <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
                     <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-accent-teal">
-                        <li>Developed custom hardware interfaces and measurement algorithms using Raspberry Pi Pico and MicroPython.</li>
-                        <li>Engineered constant current source circuitry for reliable resistance and voltage sensing.</li>
+                        <li>Developed custom hardware interfaces and measurement algorithms for signal input, voltage, and current sensing using the Raspberry Pi Pico and a custom MicroPython environment.</li>
                     </ul>
                 </div>
             </div>
@@ -420,15 +382,15 @@
                             <span class="text-xs font-mono text-brand-400">KiCad</span>
                         </div>
                         <p class="text-gray-400 font-light leading-relaxed relative z-10">
-                            Built an ESP32-based automatic pump control system featuring timer-based operation, non-volatile memory setting storage, and long-range LoRa communication. Integrated Bluetooth for mobile connectivity.
+                            Built an ESP32-based automatic pump control system featuring timer-based operation, non-volatile memory setting storage, and long-range LoRa communication.
                         </p>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/2 lg:pl-12">
                     <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
                     <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-brand-500">
-                        <li>Designed physical motor control and relay switching circuits in KiCad for reliable deployment.</li>
-                        <li>Configured LoRa and Bluetooth modules for robust wireless telemetry.</li>
+                        <li>Integrated a Bluetooth module for Android app connectivity.</li>
+                        <li>Designed the physical motor control and relay switching circuits in KiCad for reliable deployment.</li>
                     </ul>
                 </div>
             </div>
@@ -458,7 +420,7 @@
                 <div class="w-full lg:w-1/2 lg:pr-12">
                     <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
                     <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-accent-teal">
-                        <li>Developed custom Bash and Python automation tools integrated with Makefile build systems.</li>
+                        <li>Developed custom Bash and Python automation tools, integrated with Makefile build systems.</li>
                         <li>Optimized C code modularization and eliminated manual repetitive compilation tasks.</li>
                     </ul>
                 </div>
@@ -469,7 +431,7 @@
 </section>
 
 <!-- Education Section -->
-<section id="education" class="py-24 bg-base-800/50 border-y border-white/5">
+<section id="education" class="py-24 border-y border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-serif font-bold mb-16 text-center">Education</h2>
 
@@ -499,13 +461,13 @@
     </div>
 </section>
 
-<!-- Resume Download & Preview Section -->
+<!-- Resume Download Section -->
 <section id="resume" class="py-24 relative bg-base-900/40">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span class="font-mono text-brand-400 uppercase tracking-widest text-xs mb-3 block">Document Repository</span>
         <h2 class="text-4xl font-serif font-bold mb-6">Curriculum Vitae</h2>
         <p class="text-gray-400 max-w-xl mx-auto mb-12 font-light">
-            Download my complete professional resume detailing 6+ years of hardware development, KiCad schematics, bare-metal C programming, and engineering experience.
+            Download my complete professional resume detailing my foundation in hardware development, KiCad schematics, bare-metal C programming, and embedded systems engineering.
         </p>
 
         <div class="card-organic p-8 md:p-12 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 border-brand-500/20">
@@ -531,11 +493,11 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-32 relative">
+<section id="contact" class="py-32 relative border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-5xl font-serif font-bold mb-8">Get In Touch</h2>
         <p class="text-gray-400 mb-16 text-lg font-light max-w-2xl mx-auto">
-            Currently open to opportunities in Hardware Engineering, Embedded Systems, and Firmware Development. Let's connect.
+            Currently open to entry-level opportunities in Hardware Engineering, Embedded Systems, and Firmware Development. Let's connect.
         </p>
         
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-3xl mx-auto">
@@ -572,6 +534,7 @@
 </footer>
 
 <script>
+    // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 20) {
@@ -583,6 +546,7 @@
         }
     });
 
+    // Mobile menu toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
 
@@ -597,6 +561,7 @@
         });
     });
 
+    // Keeping your Chatbot JS References (Updating System Prompt to match fresher context)
     const chatToggleBtn = document.getElementById('chat-toggle-btn');
     const chatWindow = document.getElementById('chat-window');
     const closeChatBtn = document.getElementById('close-chat-btn');
@@ -608,20 +573,28 @@
     let isWaitingForResponse = false;
     let chatHistory = [];
 
-    const systemInstruction = `You are a terminal-based AI assistant for Abhirama M, a Hardware Developer and Embedded Systems Engineer with over 6 years of experience. Keep answers short, technical, and professional. 
-    Background: B.E. in Electronics & Communication from Kalpataru Institute of Technology (CGPA 7.56), Diploma from Sanjay Memorial Polytechnic (CGPA 9.26). Freelance Hardware Developer (2020-Present), Embedded Systems Intern at Cranes Varsity (Oct 2025-Aug 2026).
+    // Updated AI Prompt for Fresher Profile
+    const systemInstruction = `You are a terminal-based AI assistant for Abhirama M, a recent Electronics and Communication Engineering graduate specializing in Hardware and Embedded Systems. Keep answers short, technical, and professional. 
+    Background: B.E. in Electronics & Communication from Kalpataru Institute of Technology (2023-2026, CGPA 7.56), Diploma from Sanjay Memorial Polytechnic (2020-2023, CGPA 9.26). Gained practical experience from independent hardware consulting.
     Skills: KiCad PCB design, schematic capture, SMD soldering, oscilloscope/DMM debugging, ARM Cortex-M, ESP32, RP2040, LPC1768, Embedded C, Linux administration, Docker.
     Projects: Intelligent POS System (Embedded C/FreeRTOS/LPC1768), Universal Electronic Meter (RP2040/MicroPython), PumpPilot IoT (ESP32/LoRa/Bluetooth), Linux SysAdmin & Automation (Bash/Makefiles/Docker).
     Contact: aontrol@gmail.com | +91 8904295930 | Bengaluru, Karnataka.`;
 
-
     function scrollToBottom() {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        if(chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    sendChatBtn.addEventListener('click', handleSendMessage);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleSendMessage();
-    });
-</script>
+    if(sendChatBtn) sendChatBtn.addEventListener('click', handleSendMessage);
+    if(chatInput) {
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSendMessage();
+        });
+    }
 
+    function handleSendMessage() {
+        // Placeholder for actual send logic
+        console.log("Chat sent triggered.");
+    }
+</script>
+</body>
+</html>
