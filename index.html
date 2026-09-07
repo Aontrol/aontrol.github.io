@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- SEO and Production Meta Tags -->
-    <title>Abhirama M | Hardware & Embedded Systems Engineer</title>
-    <meta name="description" content="Portfolio of Abhirama M, Electronics and Communication Engineering graduate specializing in bare-metal firmware, ARM Cortex-M, ESP32, RP2040, and KiCad PCB design.">
-    <meta name="keywords" content="Abhirama M, Embedded Systems Engineer, Hardware Developer, Fresher, KiCad, ARM Cortex-M, ESP32, FreeRTOS, Linux, PCB Design, Bengaluru">
+    <title>Abhirama M | Electronics & Communication Engineer</title>
+    <meta name="description" content="Portfolio of Abhirama M, Electronics and Communication Engineering graduate specializing in firmware development, ARM Cortex-M, ESP32, RP Pico, and PCB design.">
     <meta name="author" content="Abhirama M">
-
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Abhirama M | Hardware & Embedded Systems Engineer">
-    <meta property="og:description" content="Dedicated ECE graduate with a strong foundation in digital electronics, KiCad PCB design, and end-to-end embedded systems development.">
-    <meta property="og:type" content="website">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,8 +15,10 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Google Fonts: Playfair Display & Space Grotesk & Fira Code -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter (UI) & Fira Code (Tech/Terminal) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind Configuration -->
     <script>
@@ -30,25 +27,20 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Space Grotesk', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
                         mono: ['Fira Code', 'monospace'],
                     },
                     colors: {
-                        brand: {
-                            400: '#fdba74', 
-                            500: '#ea580c', 
-                            600: '#c2410c',
-                        },
-                        base: {
-                            900: '#0a0f18', 
-                            800: '#141c2b', 
-                            700: '#1f2a3f', 
-                            600: '#334155',
-                        },
+                        // Clean, modern developer palette (Zinc/Slate base + Emerald accent for tech feel)
+                        bg: '#09090b',
+                        surface: '#18181b',
+                        surfaceBorder: '#27272a',
+                        textMain: '#e4e4e7',
+                        textMuted: '#a1a1aa',
                         accent: {
-                            green: '#4ade80',
-                            teal: '#2dd4bf',
+                            main: '#10b981', // Emerald 500
+                            hover: '#059669', // Emerald 600
+                            subtle: 'rgba(16, 185, 129, 0.1)',
                         }
                     }
                 }
@@ -57,544 +49,483 @@
     </script>
     <style>
         body {
-            background-color: #0a0f18;
-            color: #e2e8f0;
-            background-image: radial-gradient(circle at 15% 50%, rgba(20, 28, 43, 0.4), transparent 50%),
-                              radial-gradient(circle at 85% 30%, rgba(31, 42, 63, 0.4), transparent 50%);
-        }
-        
-        .noise-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            pointer-events: none;
-            z-index: 50;
-            opacity: 0.03;
-            background: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+            background-color: #09090b;
+            color: #e4e4e7;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #f8fafc, #fdba74);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .card-organic {
-            border: 1px solid rgba(255,255,255,0.05);
-            background: rgba(20, 28, 43, 0.6);
-            backdrop-filter: blur(10px);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                        border-color 0.4s ease;
-        }
-        .card-organic:hover {
-            transform: translateY(-8px) rotate(-0.5deg);
-            border-color: rgba(253, 186, 116, 0.3);
-            box-shadow: 20px 20px 60px rgba(0,0,0,0.4);
+        /* Subtle Developer Dot Grid Background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle, #27272a 1px, transparent 1px);
         }
 
-        .code-window {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255,255,255,0.1);
+        /* Clean Card Styling */
+        .dev-card {
+            background-color: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
         }
-        
-        .cursor-blink {
-            animation: blink 1s step-end infinite;
+        .dev-card:hover {
+            border-color: #3f3f46;
+            transform: translateY(-2px);
         }
-        @keyframes blink { 50% { opacity: 0; } }
-        
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0f18; }
-        ::-webkit-scrollbar-thumb { background: #1f2a3f; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #ea580c; }
+        ::-webkit-scrollbar-track { background: #09090b; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+        /* Blinking Cursor for Terminal */
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-500/30 selection:text-brand-400">
+<body class="antialiased selection:bg-accent-subtle selection:text-accent-main relative">
 
-<div class="noise-bg"></div>
+<div class="fixed inset-0 bg-grid opacity-30 pointer-events-none z-0"></div>
 
 <!-- Navigation Bar -->
-<nav class="fixed w-full z-40 top-0 bg-base-900/90 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="navbar">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+<nav class="fixed w-full z-40 top-0 bg-bg/80 backdrop-blur-md border-b border-surfaceBorder transition-all duration-300" id="navbar">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
             <div class="flex-shrink-0 flex items-center">
-                <a href="#" class="font-serif italic font-bold text-2xl tracking-wide text-white">
-                    Abhirama M<span class="text-brand-500">.</span>
+                <a href="#" class="font-mono font-bold text-lg text-textMain tracking-tight">
+                    aontrol<span class="text-accent-main">/</span>portfolio
                 </a>
             </div>
-            <!-- Desktop Menu (Removed Experience) -->
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">About</a>
-                <a href="#skills" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Expertise</a>
-                <a href="#projects" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Projects</a>
-                <a href="#education" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Education</a>
-                <a href="#resume" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Resume</a>
-                <a href="#contact" class="text-gray-400 hover:text-brand-400 py-2 text-sm font-medium transition-colors tracking-wide">Contact</a>
-                <a href="Abhirama_Resume.pdf" download="Abhirama_M_Resume.pdf" class="ml-2 px-4 py-2 bg-brand-500/10 hover:bg-brand-500 text-brand-400 hover:text-white border border-brand-500/30 text-xs font-mono transition-all duration-300 flex items-center gap-2">
-                    <i class="ph ph-file-pdf text-base"></i> CV.pdf
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-textMuted hover:text-textMain text-sm font-medium transition-colors">About</a>
+                <a href="#experience" class="text-textMuted hover:text-textMain text-sm font-medium transition-colors">Experience</a>
+                <a href="#skills" class="text-textMuted hover:text-textMain text-sm font-medium transition-colors">Skills</a>
+                <a href="#projects" class="text-textMuted hover:text-textMain text-sm font-medium transition-colors">Projects</a>
+                <a href="#education" class="text-textMuted hover:text-textMain text-sm font-medium transition-colors">Education</a>
+                <a href="Abhirama_Resume.pdf" download="Abhirama_Resume.pdf" class="ml-4 px-4 py-1.5 bg-surface border border-surfaceBorder hover:border-textMuted text-textMain text-sm font-mono rounded transition-colors flex items-center gap-2">
+                    <i class="ph ph-file-pdf"></i> Resume
                 </a>
             </div>
             <!-- Mobile Menu Button -->
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-gray-400 hover:text-white focus:outline-none">
-                    <i class="ph ph-list text-3xl"></i>
+                <button id="mobile-menu-btn" class="text-textMuted hover:text-textMain focus:outline-none">
+                    <i class="ph ph-list text-2xl"></i>
                 </button>
             </div>
         </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-base-800 border-b border-white/5">
-        <div class="px-4 pt-2 pb-6 space-y-2">
-            <a href="#about" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">About</a>
-            <a href="#skills" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Expertise</a>
-            <a href="#projects" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Projects</a>
-            <a href="#education" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Education</a>
-            <a href="#resume" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium border-b border-white/5">Resume Download</a>
-            <a href="#contact" class="block text-gray-300 hover:text-brand-400 py-3 text-lg font-medium">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-surfaceBorder">
+        <div class="px-4 pt-2 pb-4 space-y-1">
+            <a href="#about" class="block text-textMuted hover:text-textMain py-2 text-sm">About</a>
+            <a href="#experience" class="block text-textMuted hover:text-textMain py-2 text-sm">Experience</a>
+            <a href="#skills" class="block text-textMuted hover:text-textMain py-2 text-sm">Skills</a>
+            <a href="#projects" class="block text-textMuted hover:text-textMain py-2 text-sm">Projects</a>
+            <a href="#education" class="block text-textMuted hover:text-textMain py-2 text-sm">Education</a>
+            <a href="Abhirama_Resume.pdf" download="Abhirama_Resume.pdf" class="block text-accent-main hover:text-accent-hover py-2 text-sm font-mono">Download Resume</a>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="relative pt-40 pb-24 lg:pt-56 lg:pb-40 overflow-hidden flex flex-col items-center">
-    <div class="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-accent-teal/10 rounded-full blur-[100px] pointer-events-none"></div>
-    
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        
-        <p class="font-mono text-brand-400 mb-4 tracking-widest uppercase text-sm">Electronics & Communication Engineering Graduate</p>
-        
-        <h1 class="text-5xl md:text-7xl font-serif font-bold tracking-tight mb-6 leading-tight">
-            Abhirama M <br/> 
-            <span class="gradient-text italic">Engineering from the PCB Up.</span>
-        </h1>
-        
-        <p class="mt-8 max-w-2xl text-lg md:text-xl text-gray-400 mx-auto font-light leading-relaxed">
-            Dedicated engineering graduate with hands-on expertise in digital electronics, KiCad PCB design, bare-metal firmware (ARM Cortex-M, ESP32, RP2040), and rigorous component-level diagnostics.
-        </p>
-        
-        <div class="mt-12 flex justify-center gap-6 items-center flex-wrap">
-            <a href="#projects" class="group relative px-8 py-4 bg-white text-base-900 font-semibold rounded-none hover:bg-brand-400 transition-colors duration-300 overflow-hidden">
-                <span class="relative z-10 flex items-center gap-2">Explore Projects <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
-            </a>
-            <a href="Abhirama_Resume.pdf" download="Abhirama_M_Resume.pdf" class="px-8 py-4 bg-brand-600/20 hover:bg-brand-600/40 text-brand-400 border border-brand-500/40 font-mono transition-all duration-300 flex items-center gap-3">
-                <i class="ph ph-download-simple text-xl"></i> Download Resume
-            </a>
-            <a href="#contact" class="px-8 py-4 font-mono text-gray-400 hover:text-white border-b-2 border-transparent hover:border-brand-500 transition-all duration-300">
-                get_in_touch()
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-24 bg-base-800/50 relative border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-            <div class="lg:col-span-7">
-                <h2 class="text-4xl font-serif font-bold mb-8 flex items-center gap-4">
-                    <span class="w-12 h-[1px] bg-brand-500 block"></span>
-                    Professional Summary
+<main class="relative z-10 pt-24 pb-16 lg:pt-32 lg:pb-24">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
+        <div class="flex flex-col-reverse lg:flex-row gap-12 items-center justify-between mt-12">
+            
+            <div class="lg:w-3/5">
+                <div class="inline-block px-3 py-1 bg-accent-subtle border border-accent-main/20 text-accent-main font-mono text-xs rounded-full mb-6">
+                    Ready for new opportunities
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-textMain mb-4">
+                    Abhirama M.
+                </h1>
+                <h2 class="text-xl sm:text-2xl text-textMuted font-medium mb-6">
+                    Electronics & Communication Engineer
                 </h2>
-                <div class="space-y-6 text-gray-400 leading-relaxed text-lg font-light">
-                    <p>
-                        I am a dedicated Electronics and Communication Engineering graduate with a strong foundation in digital electronics, KiCad PCB design, and end-to-end embedded systems development. 
-                    </p>
-                    <p>
-                        Highly proficient in bare-metal firmware development (ARM Cortex-M, ESP32, RP2040), direct register-level programming, and Linux system administration. I leverage practical experience from independent hardware consulting to design, assemble, and troubleshoot custom electronic solutions.
-                    </p>
-                    <p class="italic border-l-2 border-brand-500/50 pl-4 py-2 mt-4 text-gray-300">
-                        "Eager to apply robust component-level diagnostics and microcontroller integration skills in a professional entry-level engineering role."
-                    </p>
+                <p class="text-base text-textMuted leading-relaxed mb-8 max-w-xl">
+                    Dedicated Electronics and Communication graduate with a strong foundation in digital electronics, firmware development (C/C++, Python), and 32-bit microcontrollers. Eager to contribute to innovative embedded product development.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="#projects" class="px-6 py-3 bg-textMain text-bg hover:bg-white font-medium rounded transition-colors duration-200">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-6 py-3 bg-surface border border-surfaceBorder hover:border-textMuted text-textMain font-medium rounded transition-colors duration-200">
+                        Contact Me
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-6 mt-10 text-textMuted">
+                    <a href="https://github.com/aontrol" target="_blank" rel="noopener noreferrer" class="hover:text-textMain transition-colors flex items-center gap-2 text-sm font-mono">
+                        <i class="ph ph-github-logo text-xl"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/aontrol" target="_blank" rel="noopener noreferrer" class="hover:text-textMain transition-colors flex items-center gap-2 text-sm font-mono">
+                        <i class="ph ph-linkedin-logo text-xl"></i> LinkedIn
+                    </a>
+                    <a href="mailto:aontrol@gmail.com" class="hover:text-textMain transition-colors flex items-center gap-2 text-sm font-mono">
+                        <i class="ph ph-envelope-simple text-xl"></i> Email
+                    </a>
                 </div>
             </div>
-            
-            <div class="mt-16 lg:mt-0 lg:col-span-5 relative">
-                <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-accent-teal rounded-lg blur opacity-20"></div>
-                <div class="code-window bg-[#0d131f] rounded-lg p-6 relative">
-                    <div class="flex items-center space-x-2 mb-6 opacity-70">
-                        <div class="w-3 h-3 rounded-full bg-gray-600"></div>
-                        <div class="w-3 h-3 rounded-full bg-gray-600"></div>
-                        <div class="w-3 h-3 rounded-full bg-gray-600"></div>
-                    </div>
-                    <div class="font-mono text-sm leading-loose">
-                        <div class="flex"><span class="text-accent-green mr-2">➜</span><span class="text-brand-400">~</span> <span class="text-white ml-2">whoami</span></div>
-                        <p class="text-gray-400 ml-4 mb-4">Abhirama M | Hardware & Firmware Engineer</p>
-                        
-                        <div class="flex"><span class="text-accent-green mr-2">➜</span><span class="text-brand-400">~</span> <span class="text-white ml-2">cat profile.json</span></div>
-                        <p class="text-gray-400 ml-4">{"location": "Bengaluru, IN",</p>
-                        <p class="text-gray-400 ml-4"> "status": "Recent ECE Graduate",</p>
-                        <p class="text-gray-400 ml-4 mb-4"> "core": ["KiCad", "ARM Cortex", "Linux"]}</p>
-                        
-                        <div class="flex"><span class="text-accent-green mr-2">➜</span><span class="text-brand-400">~</span> <span class="text-white ml-2 cursor-blink block w-2 h-4 bg-white translate-y-1"></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Technical Skills Section -->
-<section id="skills" class="py-24 border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-16 text-center">
-            <h2 class="text-4xl font-serif font-bold mb-4">Technical Skills</h2>
-            <p class="text-gray-400 max-w-xl mx-auto font-light">Comprehensive expertise spanning hardware design, firmware development, and systems administration.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Terminal Window UI -->
+            <div class="lg:w-2/5 w-full">
+                <div class="rounded-lg overflow-hidden border border-surfaceBorder bg-surface shadow-2xl">
+                    <div class="bg-[#1f1f22] px-4 py-3 border-b border-surfaceBorder flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                        <span class="ml-2 font-mono text-xs text-textMuted">abhirama@dev-machine:~</span>
+                    </div>
+                    <div class="p-5 font-mono text-sm leading-relaxed text-textMuted">
+                        <div class="mb-2">
+                            <span class="text-accent-main">➜</span> <span class="text-blue-400">~</span> ./fetch_profile.sh
+                        </div>
+                        <div class="mb-4 text-textMain">
+                            <span class="text-gray-500">></span> Loading engineer profile...<br>
+                            <span class="text-gray-500">></span> Specialization: Embedded Systems<br>
+                            <span class="text-gray-500">></span> Location: Bengaluru, Karnataka
+                        </div>
+                        <div class="mb-2">
+                            <span class="text-accent-main">➜</span> <span class="text-blue-400">~</span> cat core_stack.txt
+                        </div>
+                        <div class="mb-4 text-textMain grid grid-cols-2 gap-x-4">
+                            <div>- Bare-metal C/C++</div>
+                            <div>- ESP32 / RP2040</div>
+                            <div>- ARM Cortex-M</div>
+                            <div>- KiCad PCB Layout</div>
+                            <div>- FreeRTOS</div>
+                            <div>- Linux Admin</div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-accent-main">➜</span> <span class="text-blue-400">~</span> <span class="ml-2 w-2 h-4 bg-textMain inline-block cursor-blink"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">01. Hardware</h3>
-                <ul class="space-y-3 text-gray-300 font-light text-sm">
-                    <li>KiCad & Schematic Capture</li>
-                    <li>PCB Layout & Routing</li>
-                    <li>SMD / Through-Hole Soldering</li>
-                    <li>Multisim & Oscilloscope</li>
-                    <li>Logic Analyzer & Signal Gen.</li>
-                    <li>DMM Diagnostics</li>
-                    <li>Component-Level Debugging</li>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-32 pt-16 border-t border-surfaceBorder">
+        <h2 class="text-2xl font-bold text-textMain mb-6 flex items-center gap-3">
+            <span class="text-accent-main font-mono text-lg">01.</span> About Me
+        </h2>
+        <div class="text-textMuted leading-relaxed space-y-4 max-w-3xl">
+            <p>
+                I am a dedicated Electronics and Communication graduate with a strong foundation in digital electronics, firmware development (C/C++, Python), and 32-bit microcontrollers. Eager to contribute to innovative embedded product development.
+            </p>
+            <p>
+                Proficient in bare-metal programming, real-time operating systems (RTOS), precise peripheral interfacing (I2C, SPI, UART), and wireless communication protocols (LoRa, Bluetooth, WiFi). 
+            </p>
+            <p>
+                Beyond writing code, I am highly skilled in hardware troubleshooting utilizing tools like logic analyzers and Digital Multimeters (DMMs), as well as Linux system administration to maintain efficient development workflows.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-32 pt-16 border-t border-surfaceBorder">
+        <h2 class="text-2xl font-bold text-textMain mb-10 flex items-center gap-3">
+            <span class="text-accent-main font-mono text-lg">02.</span> Experience
+        </h2>
+        
+        <div class="relative border-l border-surfaceBorder ml-3 md:ml-4">
+            <!-- Experience Item -->
+            <div class="mb-10 ml-8 relative">
+                <div class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-surface border-2 border-accent-main"></div>
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-1">
+                    <h3 class="text-lg font-bold text-textMain">Embedded Systems Intern</h3>
+                    <span class="font-mono text-sm text-textMuted mt-1 md:mt-0">Oct 2025 - Feb 2026</span>
+                </div>
+                <h4 class="text-md text-accent-main mb-4 font-medium">Cranes Varsity Pvt Ltd</h4>
+                <p class="text-textMuted text-sm leading-relaxed max-w-3xl">
+                    Completed hands-on embedded systems training including microcontroller programming, peripheral interfacing (UART, ADC, GPIO), debugging, and application development using ARM Cortex-M (LPC1768), C, and Keil IDE.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-32 pt-16 border-t border-surfaceBorder">
+        <h2 class="text-2xl font-bold text-textMain mb-10 flex items-center gap-3">
+            <span class="text-accent-main font-mono text-lg">03.</span> Technical Skills
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Hardware -->
+            <div class="dev-card p-6">
+                <div class="flex items-center gap-2 text-textMain mb-4 border-b border-surfaceBorder pb-2">
+                    <i class="ph ph-cpu text-xl"></i>
+                    <h3 class="font-bold text-sm">Hardware</h3>
+                </div>
+                <ul class="space-y-2 text-textMuted text-sm font-mono leading-relaxed">
+                    <li>ESP32</li>
+                    <li>RP Pico</li>
+                    <li>ARM Cortex-M (LPC1768)</li>
+                    <li>KiCad & PCB Layout</li>
+                    <li>Sensors</li>
+                    <li>Logic Analyzer</li>
+                    <li>DMM</li>
                 </ul>
             </div>
 
-            <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">02. Embedded</h3>
-                <ul class="space-y-3 text-gray-300 font-light text-sm">
-                    <li>ARM Cortex-M (M0+/M3)</li>
-                    <li>RP2040, ESP32, LPC1768</li>
-                    <li>FreeRTOS</li>
+            <!-- Embedded -->
+            <div class="dev-card p-6">
+                <div class="flex items-center gap-2 text-textMain mb-4 border-b border-surfaceBorder pb-2">
+                    <i class="ph ph-circuitry text-xl"></i>
+                    <h3 class="font-bold text-sm">Embedded</h3>
+                </div>
+                <ul class="space-y-2 text-textMuted text-sm font-mono leading-relaxed">
+                    <li>C, C++</li>
+                    <li>Python, MicroPython</li>
+                    <li>Firmware Development</li>
+                    <li>RTOS</li>
                     <li>I2C, SPI, UART, EEPROM</li>
-                    <li>LoRa, RF, Wi-Fi, Bluetooth</li>
-                    <li>ADC/DAC Interfacing</li>
+                    <li>LoRa, RF, Bluetooth, WiFi</li>
                 </ul>
             </div>
 
-            <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">03. SysAdmin</h3>
-                <ul class="space-y-3 text-gray-300 font-light text-sm">
-                    <li>Embedded C & Assembly</li>
-                    <li>C++, Python, MicroPython</li>
-                    <li>RTOS Concepts</li>
-                    <li>Linux Admin (Ubuntu/Mint)</li>
-                    <li>Custom Makefiles</li>
-                    <li>Docker Containerization</li>
-                    <li>Bash Scripting & VirtualBox</li>
+            <!-- Software -->
+            <div class="dev-card p-6">
+                <div class="flex items-center gap-2 text-textMain mb-4 border-b border-surfaceBorder pb-2">
+                    <i class="ph ph-terminal-window text-xl"></i>
+                    <h3 class="font-bold text-sm">Software</h3>
+                </div>
+                <ul class="space-y-2 text-textMuted text-sm font-mono leading-relaxed">
+                    <li>Linux Administration</li>
+                    <li>PlatformIO</li>
+                    <li>Keil IDE</li>
+                    <li>GCC</li>
+                    <li>ncurses</li>
+                    <li>Thonny IDE</li>
+                    <li>Git, Bash</li>
                 </ul>
             </div>
 
-            <div class="card-organic p-8 group">
-                <h3 class="font-mono text-brand-400 text-sm mb-6 uppercase tracking-wider">04. Working Knowledge</h3>
-                <ul class="space-y-3 text-gray-300 font-light text-sm">
-                    <li>System Verilog & Verilog</li>
-                    <li>FPGA Development</li>
-                    <li>Intel FPGA Starter (ModelSim)</li>
-                    <li>PLC Programming</li>
-                    <li>Human-Machine Interface (HMI)</li>
-                    <li>SCADA Systems</li>
+            <!-- Languages -->
+            <div class="dev-card p-6 h-fit">
+                <div class="flex items-center gap-2 text-textMain mb-4 border-b border-surfaceBorder pb-2">
+                    <i class="ph ph-translate text-xl"></i>
+                    <h3 class="font-bold text-sm">Languages</h3>
+                </div>
+                <ul class="space-y-2 text-textMuted text-sm font-mono leading-relaxed">
+                    <li>English</li>
+                    <li>Kannada</li>
                 </ul>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Projects Section -->
-<section id="projects" class="py-24 bg-base-800/30">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-serif font-bold mb-16 text-center">Academic & Technical Projects</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-32 pt-16 border-t border-surfaceBorder">
+        <h2 class="text-2xl font-bold text-textMain mb-10 flex items-center gap-3">
+            <span class="text-accent-main font-mono text-lg">04.</span> Projects
+        </h2>
 
-        <div class="space-y-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <!-- Project 1: Intelligent POS System -->
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <div class="w-full lg:w-1/2">
-                    <div class="bg-base-900 border border-white/10 p-8 relative overflow-hidden group">
-                        <div class="absolute -right-10 -bottom-10 text-9xl text-white/[0.02] font-serif italic">01</div>
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <i class="ph ph-cpu text-4xl text-brand-400"></i>
-                            
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 relative z-10">Intelligent POS System</h3>
-                        <div class="flex flex-wrap gap-2 mb-6 relative z-10">
-                            <span class="text-xs font-mono text-brand-400">Embedded C</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-brand-400">FreeRTOS</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-brand-400">LPC1768</span>
-                        </div>
-                        <p class="text-gray-400 font-light leading-relaxed relative z-10">
-                            Engineered a bare-metal Point of Sale (POS) system on the ARM Cortex-M based LPC1768 architecture using the Keil IDE. Implemented FreeRTOS for efficient task scheduling, managing concurrent processes including GPIO polling, LCD interfacing, and switch debouncing.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 lg:pl-12">
-                    <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
-                    <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-brand-500">
-                        <li>Implemented FreeRTOS task scheduling for reliable concurrent peripheral management.</li>
-                        <li>Ensured strict real-time constraints and optimized dynamic memory allocation for continuous, reliable system uptime.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Project 2: Universal Electronic Meter -->
-            <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
-                <div class="w-full lg:w-1/2">
-                    <div class="bg-base-900 border border-white/10 p-8 relative overflow-hidden group">
-                        <div class="absolute -right-10 -bottom-10 text-9xl text-white/[0.02] font-serif italic">02</div>
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <i class="ph ph-wave-sine text-4xl text-accent-teal"></i>
-                            
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 relative z-10">Universal Electronic Meter</h3>
-                        <div class="flex flex-wrap gap-2 mb-6 relative z-10">
-                            <span class="text-xs font-mono text-accent-teal">RP2040</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-accent-teal">MicroPython</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-accent-teal">Hardware</span>
-                        </div>
-                        <p class="text-gray-400 font-light leading-relaxed relative z-10">
-                            Designed a compact, multi-purpose measuring device utilizing a 10 mA constant current source and precise ADC voltage drop measurements for an autoranging ohmmeter circuit.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 lg:pr-12">
-                    <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
-                    <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-accent-teal">
-                        <li>Developed custom hardware interfaces and measurement algorithms for signal input, voltage, and current sensing using the Raspberry Pi Pico and a custom MicroPython environment.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Project 3: PumpPilot (IoT Control System) -->
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <div class="w-full lg:w-1/2">
-                    <div class="bg-base-900 border border-white/10 p-8 relative overflow-hidden group">
-                        <div class="absolute -right-10 -bottom-10 text-9xl text-white/[0.02] font-serif italic">03</div>
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <i class="ph ph-wifi-high text-4xl text-brand-400"></i>
-                            
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 relative z-10">PumpPilot (IoT Control System)</h3>
-                        <div class="flex flex-wrap gap-2 mb-6 relative z-10">
-                            <span class="text-xs font-mono text-brand-400">ESP32</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-brand-400">LoRa</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-brand-400">KiCad</span>
-                        </div>
-                        <p class="text-gray-400 font-light leading-relaxed relative z-10">
-                            Built an ESP32-based automatic pump control system featuring timer-based operation, non-volatile memory setting storage, and long-range LoRa communication.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 lg:pl-12">
-                    <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
-                    <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-brand-500">
-                        <li>Integrated a Bluetooth module for Android app connectivity.</li>
-                        <li>Designed the physical motor control and relay switching circuits in KiCad for reliable deployment.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Project 4: Linux SysAdmin & Automation -->
-            <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
-                <div class="w-full lg:w-1/2">
-                    <div class="bg-base-900 border border-white/10 p-8 relative overflow-hidden group">
-                        <div class="absolute -right-10 -bottom-10 text-9xl text-white/[0.02] font-serif italic">04</div>
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <i class="ph ph-terminal-window text-4xl text-accent-teal"></i>
-                            
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 relative z-10">Linux SysAdmin & Automation</h3>
-                        <div class="flex flex-wrap gap-2 mb-6 relative z-10">
-                            <span class="text-xs font-mono text-accent-teal">Bash</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-accent-teal">Makefiles</span>
-                            <span class="text-xs font-mono text-gray-500">|</span>
-                            <span class="text-xs font-mono text-accent-teal">Docker</span>
-                        </div>
-                        <p class="text-gray-400 font-light leading-relaxed relative z-10">
-                            Administered local Linux environments (Ubuntu/Mint) and provisioned VirtualBox VMs to create robust, isolated environments for firmware compilation and hardware simulation.
-                        </p>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 lg:pr-12">
-                    <h4 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-4">Engineering Highlights</h4>
-                    <ul class="space-y-3 text-gray-300 font-light list-disc list-outside ml-4 marker:text-accent-teal">
-                        <li>Developed custom Bash and Python automation tools, integrated with Makefile build systems.</li>
-                        <li>Optimized C code modularization and eliminated manual repetitive compilation tasks.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Education Section -->
-<section id="education" class="py-24 border-y border-white/5">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-serif font-bold mb-16 text-center">Education</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            
-            <div class="card-organic p-8">
-                <span class="font-mono text-xs text-brand-400 uppercase tracking-widest">2023 – 2026</span>
-                <h3 class="text-xl font-bold text-white mt-2">Bachelor of Engineering</h3>
-                <p class="text-gray-400 text-sm mt-1">Electronics and Communication</p>
-                <p class="font-mono text-xs text-gray-500 mt-2">Kalpataru Institute of Technology, Tiptur</p>
-                <div class="mt-4 inline-block font-mono text-xs bg-white/5 px-3 py-1 border border-white/10 text-gray-300">
-                    CGPA: 7.56
-                </div>
-            </div>
-
-            <div class="card-organic p-8">
-                <span class="font-mono text-xs text-accent-teal uppercase tracking-widest">2020 – 2023</span>
-                <h3 class="text-xl font-bold text-white mt-2">Diploma in Engineering</h3>
-                <p class="text-gray-400 text-sm mt-1">Electronics and Communication</p>
-                <p class="font-mono text-xs text-gray-500 mt-2">Sanjay Memorial Polytechnic, Sagara</p>
-                <div class="mt-4 inline-block font-mono text-xs bg-white/5 px-3 py-1 border border-white/10 text-gray-300">
-                    CGPA: 9.26
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Resume Download Section -->
-<section id="resume" class="py-24 relative bg-base-900/40">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span class="font-mono text-brand-400 uppercase tracking-widest text-xs mb-3 block">Document Repository</span>
-        <h2 class="text-4xl font-serif font-bold mb-6">Curriculum Vitae</h2>
-        <p class="text-gray-400 max-w-xl mx-auto mb-12 font-light">
-            Download my complete professional resume detailing my foundation in hardware development, KiCad schematics, bare-metal C programming, and embedded systems engineering.
-        </p>
-
-        <div class="card-organic p-8 md:p-12 max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 border-brand-500/20">
-            <div class="flex items-center gap-4 text-left">
-                <div class="w-14 h-14 bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400">
-                    <i class="ph ph-file-pdf text-3xl"></i>
-                </div>
+            <!-- Project 1: PumpPilot -->
+            <div class="dev-card p-8 flex flex-col justify-between group">
                 <div>
-                    <h4 class="font-bold text-white text-lg">Abhirama_M_Resume.pdf</h4>
-                    <p class="font-mono text-xs text-gray-400 mt-1">Hardware & Embedded Systems Engineer (PDF)</p>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="ph ph-folder-simple text-3xl text-accent-main"></i>
+                        <span class="font-mono text-xs text-textMuted">Mar 2026 - Apr 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3 group-hover:text-accent-main transition-colors">PumpPilot (IoT Control)</h3>
+                    <p class="text-textMuted text-sm leading-relaxed mb-6">
+                        ESP32-based automatic pump control system with timer-based operation, Bluetooth app support, LoRa long-distance control, and memory-based setting storage.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs text-textMuted border-t border-surfaceBorder pt-4">
+                    <span>ESP32</span>
+                    <span>C/C++</span>
+                    <span>PlatformIO</span>
+                    <span>Relays</span>
+                    <span>LoRa</span>
+                    <span>Bluetooth</span>
                 </div>
             </div>
-            <div class="flex items-center gap-3 w-full sm:w-auto">
-                <a href="Abhirama_Resume.pdf" target="_blank" class="flex-1 sm:flex-none px-5 py-3 bg-base-800 hover:bg-base-700 text-gray-300 hover:text-white font-mono text-xs border border-white/10 transition-colors flex items-center justify-center gap-2">
-                    <i class="ph ph-eye text-base"></i> View
-                </a>
-                <a href="Abhirama_Resume.pdf" download="Abhirama_M_Resume.pdf" class="flex-1 sm:flex-none px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-mono text-xs font-semibold transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-600/20">
-                    <i class="ph ph-download-simple text-base"></i> Download
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-32 relative border-t border-white/5">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-5xl font-serif font-bold mb-8">Get In Touch</h2>
-        <p class="text-gray-400 mb-16 text-lg font-light max-w-2xl mx-auto">
-            Currently open to entry-level opportunities in Hardware Engineering, Embedded Systems, and Firmware Development. Let's connect.
+            <!-- Project 2: Intelligent POS System -->
+            <div class="dev-card p-8 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="ph ph-folder-simple text-3xl text-accent-main"></i>
+                        <span class="font-mono text-xs text-textMuted">Feb 2026</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3 group-hover:text-accent-main transition-colors">Intelligent POS System</h3>
+                    <p class="text-textMuted text-sm leading-relaxed mb-6">
+                        Microcontroller-based POS billing system integrated with Python GUI software for bill data management through UART communication.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs text-textMuted border-t border-surfaceBorder pt-4">
+                    <span>LPC1768</span>
+                    <span>Embedded C</span>
+                    <span>Keil</span>
+                    <span>Python/Tkinter</span>
+                    <span>4x4 Keypad</span>
+                    <span>16x2 LCD</span>
+                </div>
+            </div>
+
+            <!-- Project 3: Traffic Simulator -->
+            <div class="dev-card p-8 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="ph ph-folder-simple text-3xl text-accent-main"></i>
+                        <span class="font-mono text-xs text-textMuted">Dec 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3 group-hover:text-accent-main transition-colors">Traffic Simulator</h3>
+                    <p class="text-textMuted text-sm leading-relaxed mb-6">
+                        Terminal-based traffic simulation project developed in C focused on signal control and vehicle flow simulation within a Linux environment.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs text-textMuted border-t border-surfaceBorder pt-4">
+                    <span>Linux/Terminal</span>
+                    <span>C Programming</span>
+                    <span>ncurses library</span>
+                    <span>GCC Compiler</span>
+                </div>
+            </div>
+
+            <!-- Project 4: Universal Electronic Meter -->
+            <div class="dev-card p-8 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="ph ph-folder-simple text-3xl text-accent-main"></i>
+                        <span class="font-mono text-xs text-textMuted">Jun 2025 - Oct 2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-textMain mb-3 group-hover:text-accent-main transition-colors">Universal Electronic Meter</h3>
+                    <p class="text-textMuted text-sm leading-relaxed mb-6">
+                        Compact multi-purpose electronic measuring device for monitoring electrical parameters, reducing the need for multiple bulky instruments.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs text-textMuted border-t border-surfaceBorder pt-4">
+                    <span>RP2040 (Pico)</span>
+                    <span>MicroPython</span>
+                    <span>Thonny IDE</span>
+                    <span>Voltage/Current Sensors</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-32 pt-16 border-t border-surfaceBorder">
+        <h2 class="text-2xl font-bold text-textMain mb-10 flex items-center gap-3">
+            <span class="text-accent-main font-mono text-lg">05.</span> Education
+        </h2>
+
+        <div class="space-y-6">
+            
+            <div class="dev-card p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-lg font-bold text-textMain">B.E. in Electronics and Communication</h3>
+                    <p class="text-textMuted text-sm mt-1">Kalpataru Institute of Technology, Tiptur</p>
+                </div>
+                <div class="text-left sm:text-right flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center">
+                    <span class="font-mono text-sm text-textMuted block">2023 - 2026</span>
+                    <span class="font-mono text-xs text-accent-main bg-accent-subtle px-2 py-1 rounded mt-0 sm:mt-2">CGPA: 7.56</span>
+                </div>
+            </div>
+
+            <div class="dev-card p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-lg font-bold text-textMain">Diploma in Electronics and Communication</h3>
+                    <p class="text-textMuted text-sm mt-1">Sanjay Memorial Polytechnic, Sagara</p>
+                </div>
+                <div class="text-left sm:text-right flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center">
+                    <span class="font-mono text-sm text-textMuted block">2020 - 2023</span>
+                    <span class="font-mono text-xs text-accent-main bg-accent-subtle px-2 py-1 rounded mt-0 sm:mt-2">CGPA: 9.26</span>
+                </div>
+            </div>
+
+            <div class="dev-card p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-surfaceBorder/50">
+                <div>
+                    <h3 class="text-lg font-bold text-textMain">High School</h3>
+                    <p class="text-textMuted text-sm mt-1">Pragathi Composite School, Sagara</p>
+                </div>
+                <div class="text-left sm:text-right flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center">
+                    <span class="font-mono text-sm text-textMuted block">2010 - 2020</span>
+                    <span class="font-mono text-xs text-textMuted bg-surface border border-surfaceBorder px-2 py-1 rounded mt-0 sm:mt-2">Score: 58.56%</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-16 border-t border-surfaceBorder text-center">
+        <h2 class="text-3xl font-bold text-textMain mb-4">Get In Touch</h2>
+        <p class="text-textMuted max-w-xl mx-auto mb-10">
+            I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-3xl mx-auto">
-            <a href="mailto:aontrol@gmail.com" class="card-organic p-6 flex flex-col items-center justify-center gap-3 text-gray-300 hover:text-brand-400 transition-colors">
-                <i class="ph ph-envelope-simple text-3xl text-brand-400"></i>
-                <span class="font-mono text-sm">aontrol@gmail.com</span>
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <a href="mailto:aontrol@gmail.com" class="px-6 py-3 bg-surface border border-surfaceBorder hover:border-textMuted text-textMain font-mono text-sm rounded transition-colors flex items-center gap-2">
+                <i class="ph ph-envelope-simple text-lg"></i> aontrol@gmail.com
             </a>
-            <a href="tel:8904295930" class="card-organic p-6 flex flex-col items-center justify-center gap-3 text-gray-300 hover:text-brand-400 transition-colors">
-                <i class="ph ph-phone text-3xl text-accent-teal"></i>
-                <span class="font-mono text-sm">+91 8904295930</span>
+            <a href="tel:8904295930" class="px-6 py-3 bg-surface border border-surfaceBorder hover:border-textMuted text-textMain font-mono text-sm rounded transition-colors flex items-center gap-2">
+                <i class="ph ph-phone text-lg"></i> 8904295930
             </a>
-            <div class="card-organic p-6 flex flex-col items-center justify-center gap-3 text-gray-300">
-                <i class="ph ph-map-pin text-3xl text-brand-400"></i>
-                <span class="font-mono text-sm">Bengaluru, Karnataka</span>
+            <div class="px-6 py-3 bg-surface border border-surfaceBorder text-textMuted font-mono text-sm rounded flex items-center gap-2 cursor-default">
+                <i class="ph ph-map-pin text-lg"></i> Bengaluru, 560114
             </div>
         </div>
-        
-        <div class="flex justify-center space-x-8">
-            <a href="https://github.com/aontrol" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-all hover:-translate-y-1 transform duration-300 flex items-center gap-2 font-mono text-sm">
-                <i class="ph ph-github-logo text-2xl"></i> GitHub (aontrol)
+
+        <div class="flex justify-center items-center gap-6 text-textMuted">
+            <a href="https://github.com/aontrol" target="_blank" rel="noopener noreferrer" class="hover:text-accent-main transition-colors p-2" aria-label="GitHub">
+                <i class="ph ph-github-logo text-3xl"></i>
             </a>
-            <a href="https://linkedin.com/in/aontrol" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-brand-500 transition-all hover:-translate-y-1 transform duration-300 flex items-center gap-2 font-mono text-sm">
-                <i class="ph ph-linkedin-logo text-2xl"></i> LinkedIn (aontrol)
+            <a href="https://linkedin.com/in/aontrol" target="_blank" rel="noopener noreferrer" class="hover:text-accent-main transition-colors p-2" aria-label="LinkedIn">
+                <i class="ph ph-linkedin-logo text-3xl"></i>
+            </a>
+            <a href="https://aontrol.github.io/" target="_blank" rel="noopener noreferrer" class="hover:text-accent-main transition-colors p-2" aria-label="Portfolio">
+                <i class="ph ph-globe text-3xl"></i>
             </a>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <!-- Footer -->
-<footer class="bg-base-900 py-10 border-t border-white/5 text-center">
-    <p class="font-mono text-gray-600 text-xs uppercase tracking-widest">
-        &copy; 2026 Abhirama M. All rights reserved.
+<footer class="bg-surface py-6 border-t border-surfaceBorder text-center relative z-10">
+    <p class="font-mono text-textMuted text-xs">
+        Designed & Built by Abhirama M
     </p>
 </footer>
 
 <script>
-    // Navbar scroll effect
+    // Vanilla JS for Navigation Scroll Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            navbar.classList.add('shadow-lg', 'bg-base-900/95');
-            navbar.classList.remove('bg-base-900/90');
+        if (window.scrollY > 10) {
+            navbar.classList.add('shadow-md', 'bg-bg/95');
+            navbar.classList.remove('bg-bg/80');
         } else {
-            navbar.classList.remove('shadow-lg', 'bg-base-900/95');
-            navbar.classList.add('bg-base-900/90');
+            navbar.classList.remove('shadow-md', 'bg-bg/95');
+            navbar.classList.add('bg-bg/80');
         }
     });
 
-    // Mobile menu toggle
+    // Vanilla JS for Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
+    const links = menu.querySelectorAll('a');
 
     btn.addEventListener('click', () => {
         menu.classList.toggle('hidden');
     });
 
-    const links = menu.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.add('hidden');
         });
     });
-
-    // Keeping your Chatbot JS References (Updating System Prompt to match fresher context)
-    const chatToggleBtn = document.getElementById('chat-toggle-btn');
-    const chatWindow = document.getElementById('chat-window');
-    const closeChatBtn = document.getElementById('close-chat-btn');
-    const chatInput = document.getElementById('chat-input');
-    const sendChatBtn = document.getElementById('send-chat-btn');
-    const chatMessages = document.getElementById('chat-messages');
-
-    let isChatOpen = false;
-    let isWaitingForResponse = false;
-    let chatHistory = [];
-
-    // Updated AI Prompt for Fresher Profile
-    const systemInstruction = `You are a terminal-based AI assistant for Abhirama M, a recent Electronics and Communication Engineering graduate specializing in Hardware and Embedded Systems. Keep answers short, technical, and professional. 
-    Background: B.E. in Electronics & Communication from Kalpataru Institute of Technology (2023-2026, CGPA 7.56), Diploma from Sanjay Memorial Polytechnic (2020-2023, CGPA 9.26). Gained practical experience from independent hardware consulting.
-    Skills: KiCad PCB design, schematic capture, SMD soldering, oscilloscope/DMM debugging, ARM Cortex-M, ESP32, RP2040, LPC1768, Embedded C, Linux administration, Docker.
-    Projects: Intelligent POS System (Embedded C/FreeRTOS/LPC1768), Universal Electronic Meter (RP2040/MicroPython), PumpPilot IoT (ESP32/LoRa/Bluetooth), Linux SysAdmin & Automation (Bash/Makefiles/Docker).
-    Contact: aontrol@gmail.com | +91 8904295930 | Bengaluru, Karnataka.`;
-
-    function scrollToBottom() {
-        if(chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    if(sendChatBtn) sendChatBtn.addEventListener('click', handleSendMessage);
-    if(chatInput) {
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') handleSendMessage();
-        });
-    }
-
-    function handleSendMessage() {
-        // Placeholder for actual send logic
-        console.log("Chat sent triggered.");
-    }
 </script>
+
 </body>
 </html>
